@@ -68,7 +68,7 @@ void delet(pTree *root,int key){
 	pTree parent=NULL;
 	pTree k=search(*root,key,&parent);
 	if(k==NULL){
-		cout<<"É¾³ýÊ§°Ü"<<endl;
+		cout<<"åˆ é™¤é”™è¯¯"<<endl;
 		return; 
 	}
 	int flag;
