@@ -15,7 +15,7 @@ trieNode creatNode(){
 	memset(newNode->ch,0,sizeof(newNode->ch));
 	return newNode;
 }
-void buildTree(trieNode root,string word){							//¹¹½¨triedÊ÷ 
+void buildTree(trieNode root,string word){							//æž„å»ºtrieæ ‘ 
 	trieNode node=root;
 	for(int i=0;i<word.length();i++){
 		int id=word[i]-'a';
@@ -24,7 +24,7 @@ void buildTree(trieNode root,string word){							//¹¹½¨triedÊ÷
 	}
 	node->exist=1;
 }
-void buildACautomation(trieNode root){								//¹¹½¨AC×Ô¶¯»ú 
+void buildACautomation(trieNode root){								//æž„å»ºACè‡ªåŠ¨æœº 
 	queue<trieNode> q;
 	q.push(root);
 	while(!q.empty()){
@@ -61,7 +61,7 @@ int query(trieNode root,string word){
 		while(pt!=root){
 			if(pt->exist>0){
 				cnt+=pt->exist;
-				pt->exist=0;                         //Í³¼ÆºóÈ¥µô±ê¼Ç±ÜÃâÖØ¸´Í³¼Æ 
+				pt->exist=0;                         //ç»Ÿè®¡åŽåŽ»æŽ‰æ ‡è®°é¿å…é‡å¤ç»Ÿè®¡ 
 			}
 			pt=pt->fail;
 		}
