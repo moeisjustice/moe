@@ -68,6 +68,22 @@ int query(trieNode root,string word){
 	}
 	return cnt;
 }
+int flag=0;
+void destroy(trieNode root){
+    for(int i=0;i<26;i++){
+        if(root->ch[i]){
+            flag=1;
+            break;
+        }
+    }
+    if(!flag) return;
+    for(int i=0;i<26;i++){
+        if(root->ch[i]){
+            destroy(root->ch[i]);
+            delete root->ch[i];
+        }
+    }
+}
 int main(){
 	freopen("in.txt","r",stdin);
 	int n;
@@ -81,6 +97,8 @@ int main(){
 	buildACautomation(root);
 	cin>>word;
 	cout<<query(root,word);
+	destroy(root);
+	delete root;
 	return 0;
 }
 
